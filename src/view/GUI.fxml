@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="625.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GUIController">
+   <children>
+      <MenuBar fx:id="menuBar" layoutY="-1.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutX="14.0" layoutY="25.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="475.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <children>
+            <Pane fx:id="boardPane" prefHeight="475.0" prefWidth="475.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+               <opaqueInsets>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </opaqueInsets>
+            </Pane>
+            <Pane fx:id="gameControlsPane" prefHeight="475.0" prefWidth="150.0">
+               <children>
+                  <Button fx:id="localGameButton" layoutX="13.0" layoutY="54.0" mnemonicParsing="false" onAction="#createNewLocalGame" prefHeight="22.0" prefWidth="126.0" text="New Game (Local)" />
+                  <Button fx:id="vsComputerWhiteButton" layoutX="14.0" layoutY="87.0" mnemonicParsing="false" onAction="#createNewGameVsAIWhite" prefHeight="25.0" prefWidth="126.0" text="Vs. Computer (White)">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="vsComputerBlackButton" layoutX="14.0" layoutY="120.0" mnemonicParsing="false" onAction="#createNewGameVsAIBlack" prefHeight="25.0" prefWidth="126.0" text="Vs. Computer (Black)">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="undoMoveButton" layoutX="13.0" layoutY="424.0" mnemonicParsing="false" onAction="#undoMove" prefHeight="22.0" prefWidth="126.0" text="Undo Move" />
+                  <Label fx:id="gameStateLabel" layoutX="6.0" layoutY="6.0" prefHeight="42.0" prefWidth="140.0" wrapText="true" />
+                  <TextArea fx:id="moveRecordTextArea" layoutX="12.0" layoutY="202.0" prefHeight="212.0" prefWidth="126.0" />
+               </children></Pane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
