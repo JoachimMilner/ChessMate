@@ -95,7 +95,7 @@ public class GUIControllerTests extends GuiTest {
 	@Test
 	public void testGameStateLabelBasicOutput() {
 		Label gameStateLabel = find("#gameStateLabel");
-		assertEquals("Welcome to ChessMate\nSelect game mode to begin", gameStateLabel.getText());
+		assertEquals("Welcome to ChessMate\nSelect mode to begin", gameStateLabel.getText());
 		Button newGameButton = find("#localGameButton");
 		click(newGameButton);
 		assertEquals("White to move", gameStateLabel.getText());
@@ -356,8 +356,10 @@ public class GUIControllerTests extends GuiTest {
 		pieceSquareMoveTo = getNodeFromGridPane(boardGridPane, 3, 0);
 		drag(pieceSquareMoveFrom).to(pieceSquareMoveTo);
 
-		move(520, 380);
-		click();
+		Button queenPromotionButton = find("#queenPromotionButton");
+		click(queenPromotionButton);
+
+		//move(520, 380);
 
 		Class<?> cls = guiController.getClass();
 		Field field = null;

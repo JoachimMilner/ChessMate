@@ -176,6 +176,11 @@ public class GUIController implements IController {
 		ButtonType queenButtonType = new ButtonType("Queen");
 		dialog.getDialogPane().getButtonTypes().add(queenButtonType);
 		Button queenPromotionButton = (Button) dialog.getDialogPane().lookupButton(queenButtonType);
+		/* TODO
+		 * Setting the button ID stops the pawn promotion test from breaking on different screen resolutions.
+		 * Not happy with this fix but will leave until I think of a better solution.
+		*/
+		queenPromotionButton.setId("queenPromotionButton");
 		queenPromotionButton.setText("");
 		Image queenImage = new Image("res/" + pieceColour.toString() + "_QUEEN.png");
 		ImageView queenImageView = new ImageView(queenImage);
