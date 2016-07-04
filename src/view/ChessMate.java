@@ -9,6 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/*
+ * Author Joachim Milner 2016
+ */
+
 public class ChessMate extends Application {
 
 	@Override
